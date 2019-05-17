@@ -53,7 +53,7 @@
                   <ha1-backup/>
                   <ha2>
                     <port>ethernet1/1</port>
-                    <ip-address>{{ HA2-DEVICE-A }}</ip-address>
+                    <ip-address>{{ HA2_DEVICE_A }}</ip-address>
                     <netmask>255.255.255.240</netmask>
                   </ha2>
                   <ha2-backup/>
@@ -61,7 +61,7 @@
                 </interface>
                 <group>
                   <group-id>10</group-id>
-                  <peer-ip>{{ MGT-DEVICE-B }}</peer-ip>
+                  <peer-ip>{{ MGT_DEVICE_B }}</peer-ip>
                 </group>
                 <enabled>yes</enabled>
               </high-availability>
