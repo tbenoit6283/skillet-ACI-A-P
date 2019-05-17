@@ -21,11 +21,11 @@ labels:
 # variables used in the configuration templates
 # type_hint defines the form field type in pan-cnc
 variables:
-  - name: STACKDEVICEA
+  - name: STACK_DEVICE_A
     description: Template Stack name Device A
     default: Stack-Device-A
     type_hint: text
-    - name: STACK_DEVICE_B
+  - name: STACK_DEVICE_B
     description: Template Stack name Device B
     default: Stack-Device-B
     type_hint: text
