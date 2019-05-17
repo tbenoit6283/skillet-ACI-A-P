@@ -106,7 +106,7 @@
                             <hold-time>2</hold-time>
                           </path-monitor>
                           <nexthop>
-                            <ip-address>{{ TARGET-IP-PBR }}</ip-address>
+                            <ip-address>{{ TARGET_IP_PBR }}</ip-address>
                           </nexthop>
                           <bfd>
                             <profile>None</profile>
@@ -145,7 +145,7 @@
                         <enabled>no</enabled>
                       </ndp-proxy>
                       <ip>
-                        <entry name="{{ LOCAL-IP-PBR }}"/>
+                        <entry name="{{ LOCAL_IP_PBR }}"/>
                       </ip>
                       <interface-management-profile>Ping</interface-management-profile>
                       <lldp>
@@ -218,7 +218,7 @@
                   <ha1-backup/>
                   <ha2>
                     <port>ethernet1/1</port>
-                    <ip-address>{{ HA2-DEVICE-B }}</ip-address>
+                    <ip-address>{{ HA2_DEVICE_B }}</ip-address>
                     <netmask>255.255.255.240</netmask>
                   </ha2>
                   <ha2-backup/>
@@ -226,7 +226,7 @@
                 </interface>
                 <group>
                   <group-id>10</group-id>
-                  <peer-ip>{{ MGT-DEVICE-A }}</peer-ip>
+                  <peer-ip>{{ MGT_DEVICE_A }}</peer-ip>
                 </group>
                 <enabled>yes</enabled>
               </high-availability>
@@ -271,7 +271,7 @@
                             <hold-time>2</hold-time>
                           </path-monitor>
                           <nexthop>
-                            <ip-address>{{ TARGET-IP-PBR }}</ip-address>
+                            <ip-address>{{ TARGET_IP_PBR }}</ip-address>
                           </nexthop>
                           <bfd>
                             <profile>None</profile>
@@ -310,7 +310,7 @@
                         <enabled>no</enabled>
                       </ndp-proxy>
                       <ip>
-                        <entry name="{{ LOCAL-IP-PBR }}"/>
+                        <entry name="{{ LOCAL_IP_PBR }}"/>
                       </ip>
                       <interface-management-profile>Ping</interface-management-profile>
                       <lldp>

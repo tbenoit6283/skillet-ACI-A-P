@@ -21,11 +21,11 @@ labels:
 # variables used in the configuration templates
 # type_hint defines the form field type in pan-cnc
 variables:
-  - name: STACK-DEVICE-A
+  - name: STACK_DEVICE_A
     description: Template Stack name Device A
     default: Stack-Device-A
     type_hint: text
-    - name: STACK-DEVICE-B
+    - name: STACK_DEVICE_B
     description: Template Stack name Device B
     default: Stack-Device-B
     type_hint: text
@@ -41,31 +41,31 @@ variables:
     description: NTP Server IP address
     default: 1.pool.ntp.org
     type_hint: text
-  - name: HA2-DEVICE-A
+  - name: HA2_DEVICE_A
     description: Local IP address for HA2
     default: 1.1.1.1
     type_hint: ip_address
-  - name: HA2-DEVICE-B
+  - name: HA2_DEVICE_B
     description: Peer IP address for HA2
     default: 1.1.1.2
     type_hint: ip_address
-  - name: MGT-DEVICE-A
+  - name: MGT_DEVICE_A
     description: MGT IP address of Device A
     default: 10.197.140.157
     type_hint: ip_address
-  - name: MGT-DEVICE-B
+  - name: MGT_DEVICE_B
     description: MGT IP address of Device B
     default: 10.197.140.158
     type_hint: ip_address
   - name: ZONE
     description: Zone creation for PBR interconnection
-    default: ACI-PBR
+    default: ACI_PBR
     type_hint: text
-  - name: TARGET-IP-PBR
+  - name: TARGET_IP_PBR
     description: Target IP of the fabric for PBR without netmask
     default: 10.0.0.254
     type_hint: ip_address
-  - name: LOCAL-IP-PBR
+  - name: LOCAL_IP_PBR
     description: Local IP of your VM interface connected to the the fabric for PBR with netmask
     default: 10.0.0.1/24
     type_hint: ip_address

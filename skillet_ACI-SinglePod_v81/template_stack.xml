@@ -1,11 +1,11 @@
-<entry name="{{ STACK-DEVICE-A }}">
+<entry name="{{ STACK_DEVICE_A }}">
         <description>Template Stack Device A for ACI</description>
         <settings/>
         <templates>
           <member>Template-Device-A</member>
         </templates>
 </entry>
-<entry name="{{ STACK-DEVICE-B }}">
+<entry name="{{ STACK_DEVICE_B }}">
         <description>Template Stack Device B for ACI</description>
         <settings/>
         <templates>
