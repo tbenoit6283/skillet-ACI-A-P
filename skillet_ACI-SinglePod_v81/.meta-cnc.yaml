@@ -1,0 +1,111 @@
+# Metadata for skillet_ACI_SinglePod_v81
+
+# snippets is the base configuration directory for all child configurations
+# this is a complete Panorama and reference device-group and template stack configuration for ACI Single Pod
+
+# snippet folder name
+name: skillet_ACI-SinglePod
+# label used for menu selection
+label: v8.1 Iron-Skillet firewall clustering A/P configuration for Single ACI with Panorama templates
+description: Iron-Skillet baseline A/P clustering configuration for ACI single Pod POCs
+# type of device configuration
+type: panorama
+extends:
+
+# grouping of like snippets for dynamic menu creation in pan-cnc
+labels:
+  service_type: iron_skillet
+  collection:
+    - IronSkillet
+
+# variables used in the configuration templates
+# type_hint defines the form field type in pan-cnc
+variables:
+  - name: STACK-DEVICE-A
+    description: Template Stack name Device A
+    default: Stack-Device-A
+    type_hint: text
+    - name: STACK-DEVICE-B
+    description: Template Stack name Device B
+    default: Stack-Device-B
+    type_hint: text
+  - name: DEVICEGROUP
+    description: Device Group name for ACI
+    default: Device-Group-ACI
+    type_hint: text
+  - name: DNS
+    description: DNS Server IP address
+    default: 8.8.8.8
+    type_hint: ip_address
+  - name: NTP
+    description: NTP Server IP address
+    default: 1.pool.ntp.org
+    type_hint: text
+  - name: HA2-DEVICE-A
+    description: Local IP address for HA2
+    default: 1.1.1.1
+    type_hint: ip_address
+  - name: HA2-DEVICE-B
+    description: Peer IP address for HA2
+    default: 1.1.1.2
+    type_hint: ip_address
+  - name: MGT-DEVICE-A
+    description: MGT IP address of Device A
+    default: 10.197.140.157
+    type_hint: ip_address
+  - name: MGT-DEVICE-B
+    description: MGT IP address of Device B
+    default: 10.197.140.158
+    type_hint: ip_address
+  - name: ZONE
+    description: Zone creation for PBR interconnection
+    default: ACI-PBR
+    type_hint: text
+  - name: TARGET-IP-PBR
+    description: Target IP of the fabric for PBR without netmask
+    default: 10.0.0.254
+    type_hint: ip_address
+  - name: LOCAL-IP-PBR
+    description: Local IP of your VM interface connected to the the fabric for PBR with netmask
+    default: 10.0.0.1/24
+    type_hint: ip_address
+  - name: COLORTAG
+    description: Color of the TAG for rules of your Zone
+    default: orange
+    type_hint: dropdown
+    dd_list:
+      - key: orange
+        value: color6
+      - key: blue
+        value: color3
+      - key: red
+        value: color1
+      - key: green
+        value: color2
+
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: panorama_system
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    file: panorama_system.xml
+  - name: template
+    xpath: /config/devices/entry[@name='localhost.localdomain']/template
+    file: template.xml
+  - name: stack
+    xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack
+    file: template_stack.xml
+  - name: devicegroup
+    xpath: /config/devices/entry[@name='localhost.localdomain']/device-group
+    file: device_group.xml
+  - name: tag
+    xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICEGROUP }}']/tag
+    file: tag.xml
+  - name: log_settings
+    xpath: /config/shared/log-settings/profiles
+    file: log_settings.xml
+  - name: pre_rulebase_security
+    xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICEGROUP }}']/pre-rulebase
+    file: pre_rulebase_security.xml
+
+    

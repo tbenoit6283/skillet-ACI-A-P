@@ -1,0 +1,43 @@
+<security>
+    <rules>
+        <entry name="Allow-All-{{ ZONE }}">
+            <target>
+                <negate>no</negate>
+            </target>
+            <to>
+                <member>{{ ZONE }}</member>
+            </to>
+            <from>
+                <member>{{ ZONE }}</member>
+            </from>
+            <source>
+                <member>any</member>
+            </source>
+            <destination>
+                <member>any</member>
+            </destination>
+            <source-user>
+                <member>any</member>
+            </source-user>
+            <category>
+                <member>any</member>
+            </category>
+            <application>
+                <member>any</member>
+            </application>
+            <service>
+                <member>any</member>
+            </service>
+            <hip-profiles>
+                <member>any</member>
+            </hip-profiles>
+            <tag>
+                <member>{{ ZONE }}</member>
+            </tag>
+            <action>allow</action>
+            <rule-type>intrazone</rule-type>
+            <log-setting>Panorama</log-setting>
+        </entry>
+    </rules>
+</security>
+    

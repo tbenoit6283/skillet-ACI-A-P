@@ -1,0 +1,3 @@
+<entry name="{{ ZONE }}">
+    <color>{{ COLORTAG }}</color>
+</entry>

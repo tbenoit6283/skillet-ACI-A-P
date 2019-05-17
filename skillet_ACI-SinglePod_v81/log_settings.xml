@@ -1,0 +1,29 @@
+    <entry name="Panorama">
+      <match-list>
+        <entry name="traffic">
+          <log-type>traffic</log-type>
+          <filter>All Logs</filter>
+          <send-to-panorama>yes</send-to-panorama>
+        </entry>
+        <entry name="threat">
+          <log-type>threat</log-type>
+          <filter>All Logs</filter>
+          <send-to-panorama>yes</send-to-panorama>
+        </entry>
+        <entry name="url">
+          <log-type>url</log-type>
+          <filter>All Logs</filter>
+          <send-to-panorama>yes</send-to-panorama>
+        </entry>
+        <entry name="data">
+          <log-type>data</log-type>
+          <filter>All Logs</filter>
+          <send-to-panorama>yes</send-to-panorama>
+        </entry>
+        <entry name="wildfire">
+          <log-type>wildfire</log-type>
+          <filter>All Logs</filter>
+          <send-to-panorama>yes</send-to-panorama>
+        </entry>
+      </match-list>
+    </entry>

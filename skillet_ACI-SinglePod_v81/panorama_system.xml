@@ -1,0 +1,13 @@
+<dns-setting>
+        <servers>
+          <primary>{{ DNS }}</primary>
+        </servers>
+</dns-setting>
+<ntp-servers>
+    <primary-ntp-server>
+        <ntp-server-address>{{ NTP }}</ntp-server-address>
+        <authentication-type>
+        <none/>
+        </authentication-type>
+    </primary-ntp-server>
+</ntp-servers>

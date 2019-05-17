@@ -1,0 +1,330 @@
+<entry name="Template-Device-A">
+      <settings>
+        <default-vsys>vsys1</default-vsys>
+      </settings>
+      <config>
+        <devices>
+          <entry name="localhost.localdomain">
+            <vsys>
+              <entry name="vsys1">
+                <zone>
+                  <entry name="{{ ZONE }}">
+                    <network>
+                      <layer3>
+                        <member>ethernet1/2</member>
+                      </layer3>
+                    </network>
+                    <enable-user-identification>yes</enable-user-identification>
+                  </entry>
+                </zone>
+                <import>
+                  <network>
+                    <interface>
+                      <member>ethernet1/2</member>
+                    </interface>
+                  </network>
+                </import>
+              </entry>
+            </vsys>
+            <deviceconfig>
+              <setting>
+                <auto-mac-detect>no</auto-mac-detect>
+              </setting>
+              <system>
+                <hostname>Device-A</hostname>
+                <login-banner>VM series in A/P for ACI Single Pod automated deployment</login-banner>
+                <timezone>Europe/Paris</timezone>
+                <dns-setting>
+                  <servers>
+                    <primary>{{ DNS }}</primary>
+                  </servers>
+                </dns-setting>
+                <ntp-servers>
+                  <primary-ntp-server>
+                    <ntp-server-address>{{ NTP }}</ntp-server-address>
+                  </primary-ntp-server>
+                </ntp-servers>
+              </system>
+              <high-availability>
+                <interface>
+                  <ha1>
+                    <port>management</port>
+                  </ha1>
+                  <ha1-backup/>
+                  <ha2>
+                    <port>ethernet1/1</port>
+                    <ip-address>{{ HA2-DEVICE-A }}</ip-address>
+                    <netmask>255.255.255.240</netmask>
+                  </ha2>
+                  <ha2-backup/>
+                  <ha3/>
+                </interface>
+                <group>
+                  <group-id>10</group-id>
+                  <peer-ip>{{ MGT-DEVICE-B }}</peer-ip>
+                </group>
+                <enabled>yes</enabled>
+              </high-availability>
+            </deviceconfig>
+            <network>
+              <virtual-router>
+                <entry name="VR-ACI-PBR">
+                  <ecmp>
+                    <algorithm>
+                      <ip-modulo/>
+                    </algorithm>
+                  </ecmp>
+                  <protocol>
+                    <bgp>
+                      <routing-options>
+                        <graceful-restart>
+                          <enable>yes</enable>
+                        </graceful-restart>
+                      </routing-options>
+                      <enable>no</enable>
+                    </bgp>
+                    <rip>
+                      <enable>no</enable>
+                    </rip>
+                    <ospf>
+                      <enable>no</enable>
+                    </ospf>
+                    <ospfv3>
+                      <enable>no</enable>
+                    </ospfv3>
+                  </protocol>
+                  <interface>
+                    <member>ethernet1/2</member>
+                  </interface>
+                  <routing-table>
+                    <ip>
+                      <static-route>
+                        <entry name="default">
+                          <path-monitor>
+                            <enable>no</enable>
+                            <failure-condition>any</failure-condition>
+                            <hold-time>2</hold-time>
+                          </path-monitor>
+                          <nexthop>
+                            <ip-address>{{ TARGET-IP-PBR }}</ip-address>
+                          </nexthop>
+                          <bfd>
+                            <profile>None</profile>
+                          </bfd>
+                          <interface>ethernet1/2</interface>
+                          <metric>10</metric>
+                          <destination>0.0.0.0/0</destination>
+                          <route-table>
+                            <unicast/>
+                          </route-table>
+                        </entry>
+                      </static-route>
+                    </ip>
+                  </routing-table>
+                </entry>
+              </virtual-router>
+              <profiles>
+                <interface-management-profile>
+                  <entry name="Ping">
+                    <ping>yes</ping>
+                  </entry>
+                </interface-management-profile>
+              </profiles>
+              <interface>
+                <ethernet>
+                  <entry name="ethernet1/2">
+                    <layer3>
+                      <ipv6>
+                        <neighbor-discovery>
+                          <router-advertisement>
+                            <enable>no</enable>
+                          </router-advertisement>
+                        </neighbor-discovery>
+                      </ipv6>
+                      <ndp-proxy>
+                        <enabled>no</enabled>
+                      </ndp-proxy>
+                      <ip>
+                        <entry name="{{ LOCAL-IP-PBR }}"/>
+                      </ip>
+                      <interface-management-profile>Ping</interface-management-profile>
+                      <lldp>
+                        <enable>no</enable>
+                      </lldp>
+                    </layer3>
+                  </entry>
+                  <entry name="ethernet1/1">
+                    <ha/>
+                  </entry>
+                </ethernet>
+              </interface>
+            </network>
+          </entry>
+        </devices>
+      </config>
+</entry>
+<entry name="Template-Device-B">
+      <settings>
+        <default-vsys>vsys1</default-vsys>
+      </settings>
+      <config>
+        <devices>
+          <entry name="localhost.localdomain">
+            <vsys>
+              <entry name="vsys1">
+                <zone>
+                  <entry name="{{ ZONE }}">
+                    <network>
+                      <layer3>
+                        <member>ethernet1/2</member>
+                      </layer3>
+                    </network>
+                    <enable-user-identification>yes</enable-user-identification>
+                  </entry>
+                </zone>
+                <import>
+                  <network>
+                    <interface>
+                      <member>ethernet1/2</member>
+                    </interface>
+                  </network>
+                </import>
+              </entry>
+            </vsys>
+            <deviceconfig>
+              <setting>
+                <auto-mac-detect>no</auto-mac-detect>
+              </setting>
+              <system>
+                <hostname>Device-B</hostname>
+                <login-banner>VM series in A/P for ACI Single Pod automated deployment</login-banner>
+                <timezone>Europe/Paris</timezone>
+                <dns-setting>
+                  <servers>
+                    <primary>{{ DNS }}</primary>
+                  </servers>
+                </dns-setting>
+                <ntp-servers>
+                  <primary-ntp-server>
+                    <ntp-server-address>{{ NTP }}</ntp-server-address>
+                  </primary-ntp-server>
+                </ntp-servers>
+              </system>
+              <high-availability>
+                <interface>
+                  <ha1>
+                    <port>management</port>
+                  </ha1>
+                  <ha1-backup/>
+                  <ha2>
+                    <port>ethernet1/1</port>
+                    <ip-address>{{ HA2-DEVICE-B }}</ip-address>
+                    <netmask>255.255.255.240</netmask>
+                  </ha2>
+                  <ha2-backup/>
+                  <ha3/>
+                </interface>
+                <group>
+                  <group-id>10</group-id>
+                  <peer-ip>{{ MGT-DEVICE-A }}</peer-ip>
+                </group>
+                <enabled>yes</enabled>
+              </high-availability>
+            </deviceconfig>
+            <network>
+              <virtual-router>
+                <entry name="VR-ACI-PBR">
+                  <ecmp>
+                    <algorithm>
+                      <ip-modulo/>
+                    </algorithm>
+                  </ecmp>
+                  <protocol>
+                    <bgp>
+                      <routing-options>
+                        <graceful-restart>
+                          <enable>yes</enable>
+                        </graceful-restart>
+                      </routing-options>
+                      <enable>no</enable>
+                    </bgp>
+                    <rip>
+                      <enable>no</enable>
+                    </rip>
+                    <ospf>
+                      <enable>no</enable>
+                    </ospf>
+                    <ospfv3>
+                      <enable>no</enable>
+                    </ospfv3>
+                  </protocol>
+                  <interface>
+                    <member>ethernet1/2</member>
+                  </interface>
+                  <routing-table>
+                    <ip>
+                      <static-route>
+                        <entry name="default">
+                          <path-monitor>
+                            <enable>no</enable>
+                            <failure-condition>any</failure-condition>
+                            <hold-time>2</hold-time>
+                          </path-monitor>
+                          <nexthop>
+                            <ip-address>{{ TARGET-IP-PBR }}</ip-address>
+                          </nexthop>
+                          <bfd>
+                            <profile>None</profile>
+                          </bfd>
+                          <interface>ethernet1/2</interface>
+                          <metric>10</metric>
+                          <destination>0.0.0.0/0</destination>
+                          <route-table>
+                            <unicast/>
+                          </route-table>
+                        </entry>
+                      </static-route>
+                    </ip>
+                  </routing-table>
+                </entry>
+              </virtual-router>
+              <profiles>
+                <interface-management-profile>
+                  <entry name="Ping">
+                    <ping>yes</ping>
+                  </entry>
+                </interface-management-profile>
+              </profiles>
+              <interface>
+                <ethernet>
+                  <entry name="ethernet1/2">
+                    <layer3>
+                      <ipv6>
+                        <neighbor-discovery>
+                          <router-advertisement>
+                            <enable>no</enable>
+                          </router-advertisement>
+                        </neighbor-discovery>
+                      </ipv6>
+                      <ndp-proxy>
+                        <enabled>no</enabled>
+                      </ndp-proxy>
+                      <ip>
+                        <entry name="{{ LOCAL-IP-PBR }}"/>
+                      </ip>
+                      <interface-management-profile>Ping</interface-management-profile>
+                      <lldp>
+                        <enable>no</enable>
+                      </lldp>
+                    </layer3>
+                  </entry>
+                  <entry name="ethernet1/1">
+                    <ha/>
+                  </entry>
+                </ethernet>
+              </interface>
+            </network>
+          </entry>
+        </devices>
+      </config>
+</entry>

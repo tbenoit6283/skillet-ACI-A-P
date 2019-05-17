@@ -1,0 +1,3 @@
+<entry name="{{ DEVICEGROUP }}">
+        <description>Device Group ACI for Single Pod for automated deployment</description>
+</entry>
