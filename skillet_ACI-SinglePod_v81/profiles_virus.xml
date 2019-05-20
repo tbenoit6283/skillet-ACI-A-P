@@ -1,0 +1,29 @@
+<entry name="PBR-ACI-Alert">
+          <decoder>
+            <entry name="ftp">
+              <action>alert</action>
+              <wildfire-action>alert</wildfire-action>
+            </entry>
+            <entry name="http">
+              <action>alert</action>
+              <wildfire-action>alert</wildfire-action>
+            </entry>
+            <entry name="imap">
+              <action>alert</action>
+              <wildfire-action>alert</wildfire-action>
+            </entry>
+            <entry name="pop3">
+              <action>alert</action>
+              <wildfire-action>alert</wildfire-action>
+            </entry>
+            <entry name="smb">
+              <action>alert</action>
+              <wildfire-action>alert</wildfire-action>
+            </entry>
+            <entry name="smtp">
+              <action>alert</action>
+              <wildfire-action>alert</wildfire-action>
+            </entry>
+          </decoder>
+          <description>AV Profile set in Alert mode only for POCs</description>
+        </entry>

@@ -91,7 +91,7 @@ snippets:
     file: panorama_system.xml
   - name: template
     xpath: /config/devices/entry[@name='localhost.localdomain']/template
-    file: template1.xml
+    file: template.xml
   - name: stack
     xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack
     file: template_stack.xml
@@ -104,6 +104,24 @@ snippets:
   - name: log_settings
     xpath: /config/shared/log-settings/profiles
     file: log_settings.xml
+  - name: profiles_virus
+    xpath: /config/shared/profiles/virus
+    file: profiles_virus.xml
+  - name: profiles_spyware
+    xpath: /config/shared/profiles/spyware
+    file: profiles_spyware.xml
+  - name: profiles_vulnerability
+    xpath: /config/shared/profiles/vulnerability
+    file: profiles_vulnerability.xml
+  - name: profiles_file_blocking
+    xpath: /config/shared/profiles/file-blocking
+    file: profiles_file_blocking.xml
+  - name: profiles_url_filtering
+    xpath: /config/shared/profiles/url-filtering
+    file: profiles_url_filtering.xml
+  - name: profiles_wildfire_analysis
+    xpath: /config/shared/profiles/wildfire-analysis
+    file: profiles_wildfire_analysis.xml
   - name: pre_rulebase_security
     xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICEGROUP }}']/pre-rulebase
     file: pre_rulebase_security.xml

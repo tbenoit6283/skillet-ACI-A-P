@@ -1,0 +1,15 @@
+<entry name="PBR-ACI-Alert">
+          <rules>
+            <entry name="Alert-All">
+              <application>
+                <member>any</member>
+              </application>
+              <file-type>
+                <member>any</member>
+              </file-type>
+              <direction>both</direction>
+              <analysis>public-cloud</analysis>
+            </entry>
+          </rules>
+          <description>Wildfire Profile set in Alert mode only for POCs</description>
+        </entry>

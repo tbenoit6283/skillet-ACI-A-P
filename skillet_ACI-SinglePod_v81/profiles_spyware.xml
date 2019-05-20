@@ -1,0 +1,32 @@
+<entry name="PBR-ACI-Alert">
+          <botnet-domains>
+            <lists>
+              <entry name="default-paloalto-dns">
+                <action>
+                  <sinkhole/>
+                </action>
+              </entry>
+            </lists>
+            <sinkhole>
+              <ipv4-address>pan-sinkhole-default-ip</ipv4-address>
+              <ipv6-address>::1</ipv6-address>
+            </sinkhole>
+          </botnet-domains>
+          <rules>
+            <entry name="Alert-All">
+              <action>
+                <alert/>
+              </action>
+              <severity>
+                <member>critical</member>
+                <member>medium</member>
+                <member>low</member>
+                <member>high</member>
+              </severity>
+              <threat-name>any</threat-name>
+              <category>any</category>
+              <packet-capture>disable</packet-capture>
+            </entry>
+          </rules>
+          <description>AS Profile set in Alert mode only for POCs</description>
+        </entry>
