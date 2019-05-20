@@ -42,11 +42,11 @@ variables:
     default: 1.pool.ntp.org
     type_hint: text
   - name: HA2_DEVICE_A
-    description: Local IP address for HA2
+    description: Device A IP address for HA2
     default: 1.1.1.1
     type_hint: ip_address
   - name: HA2_DEVICE_B
-    description: Peer IP address for HA2
+    description: Device B IP address for HA2
     default: 1.1.1.2
     type_hint: ip_address
   - name: MGT_DEVICE_A
@@ -62,13 +62,13 @@ variables:
     default: ACI_PBR
     type_hint: text
   - name: TARGET_IP_PBR
-    description: Target IP of the fabric for PBR without netmask
+    description: Target IP of the fabric for PBR (without netmask)
     default: 10.0.0.254
     type_hint: ip_address
   - name: LOCAL_IP_PBR
-    description: Local IP of your VM interface connected to the the fabric for PBR with netmask
+    description: Local IP of your VM interface connected to the the fabric for PBR (with netmask)
     default: 10.0.0.1/24
-    type_hint: ip_address
+    type_hint: text
   - name: COLORTAG
     description: Color of the TAG for rules of your Zone
     default: orange
@@ -91,7 +91,7 @@ snippets:
     file: panorama_system.xml
   - name: template
     xpath: /config/devices/entry[@name='localhost.localdomain']/template
-    file: template.xml
+    file: template1.xml
   - name: stack
     xpath: /config/devices/entry[@name='localhost.localdomain']/template-stack
     file: template_stack.xml
