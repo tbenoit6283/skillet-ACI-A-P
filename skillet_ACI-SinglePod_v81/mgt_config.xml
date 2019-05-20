@@ -1,0 +1,4 @@
+<devices>
+      <entry name="{{ SN_DEVICE_A }}"/>
+      <entry name="{{ SN_DEVICE_B }}"/>
+</devices>

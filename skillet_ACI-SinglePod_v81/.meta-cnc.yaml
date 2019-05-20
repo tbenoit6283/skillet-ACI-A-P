@@ -53,10 +53,18 @@ variables:
     description: MGT IP address of Device A
     default: 10.197.140.157
     type_hint: ip_address
+  - name: SN_DEVICE_A
+    description: SN of Device A
+    default: 015351000028033
+    type_hint: ip_address
   - name: MGT_DEVICE_B
     description: MGT IP address of Device B
-    default: 10.197.140.158
-    type_hint: ip_address
+    default: 015351000028032
+    type_hint: text
+  - name: SN_DEVICE_B
+    description: SN of Device B
+    default: 10.197.140.157
+    type_hint: text
   - name: ZONE
     description: Zone creation for PBR interconnection
     default: ACI_PBR
@@ -89,6 +97,9 @@ snippets:
   - name: panorama_system
     xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
     file: panorama_system.xml
+  - name: panorama_mgt_config
+    xpath: /config/mgt-config
+    file: mgt_config.xml
   - name: template
     xpath: /config/devices/entry[@name='localhost.localdomain']/template
     file: template.xml
@@ -125,5 +136,4 @@ snippets:
   - name: pre_rulebase_security
     xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICEGROUP }}']/pre-rulebase
     file: pre_rulebase_security.xml
-
     
