@@ -56,14 +56,14 @@ variables:
   - name: SN_DEVICE_A
     description: SN of Device A
     default: 015351000028033
-    type_hint: ip_address
+    type_hint: text
   - name: MGT_DEVICE_B
     description: MGT IP address of Device B
-    default: 015351000028032
-    type_hint: text
+    default: 10.197.140.158
+    type_hint: ip_address
   - name: SN_DEVICE_B
     description: SN of Device B
-    default: 10.197.140.157
+    default: 015351000028033
     type_hint: text
   - name: ZONE
     description: Zone creation for PBR interconnection
