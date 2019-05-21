@@ -4,7 +4,7 @@
 - Panorama 8.1.X and 2 VM series 8.1.X connected to panorama but not attached to any template nor device group yet.
 - Each of your VM series must have a minimum of 3 vNics for that setup and vNic must be defined as describe bellow: 
         - eth0 (vNic1) connected to the management network - eth1 (vNic2) connected to a dedicated port group of your DVS and it will be used for HA2 
-        - eth2 (vNic3) connected to a dedicated port group of your DVS and it will be used for PBR connection to the fabric. Promiscuous Mode MUST be enable on that port group in your DVS!!!`
+        - eth2 (vNic3) connected to a dedicated port group of your DVS and it will be used for PBR connection to the fabric. Promiscuous Mode MUST be enabled on that port group in your DVS!!!`
 
 - A PBR policy MUST be configured in parallel in the Fabric for your pod with filters on a Service Graph and that Service Graph must be applied to a contract to start redirecting some traffic to our cluster of VM Series.
   
