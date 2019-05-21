@@ -38,7 +38,7 @@
 
 ## Caution  
 - That skillet will not configure ACI Fabric to redirect traffic. That step must be done in parallel.
-- Promiscuous mode MUST be enable on vNIC3 port group to have a functional cluster A/P
+- Promiscuous mode MUST be enabled on vNIC3 port group to have a functional cluster A/P
 - That skillet should work with physical devices instead of VM series but it has not been tested.
 
 
