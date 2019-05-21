@@ -2,19 +2,19 @@
 
 ### Pre-Requisite :
 - Panorama 8.1.X and 2 VM series 8.1.X connected to panorama but not attached to any template nor device group yet.
-
-- Each of your VM series must have a minimum of 3 vNics for that setup and vNic must be defined as describe bellow :
-        - eth0 (vNic1) connected to the management network
-        - eth1 (vNic2) connected to a dedicated port group of your DVS and it will be used for HA2
-        - eth2 (vNic3) connected to a dedicated port group of your DVS and it will be used for PBR connection to the fabric. Promiscious Mode MUST be enable on that port group in your DVS !!! 
-
-- A PBR policy MUST be configured in parallel in the Fabric for your pod with filters on a Service Graph and that Service Graph must be applied to a contract to start redirecting some traffic to our cluster of VM Series.   
+- Each of your VM series must have a minimum of 3 vNics for that setup and vNic must be defined as describe bellow: 
+        - eth0 (vNic1) connected to the management network - eth1 (vNic2) connected to a dedicated port group of your DVS and it will be used for HA2 
+        - eth2 (vNic3) connected to a dedicated port group of your DVS and it will be used for PBR connection to the fabric. Promiscuous Mode MUST be enable on that port group in your DVS!!!`
+        
+- A PBR policy MUST be configured in parallel in the Fabric for your pod with filters on a Service Graph and that Service Graph must be applied to a contract to start redirecting some traffic to our cluster of VM Series.
+  
 
 
 ### This skillet will automate these tasks for you on Panorama :
 - create a Template Stack and a Template dedicated for each of your 2 VM Series all Network and Device policies configured with webpage variables.
-- create a Device Group dedicated for that specific cluster of VM series configured for a Single Pod PBR insersion.
-- move and attach your 2 VM series to these respective Template Stack and Device Group adn trigger a commit to have a fully functionnal setup.
+- create a Device Group dedicated for that specific cluster of VM series configured for a Single Pod PBR insertion.
+- move and attach your 2 VM series to these respective Template Stack and Device Group and trigger a commit to have a fully functional setup.
+
  
 
 ## Variables
@@ -36,8 +36,9 @@
 
 ## Caution  
 - That skillet will not configure ACI Fabric to redirect traffic. That step must be done in parallel.
-- Promiscious mode MUST be enable on vNIC3 port group to have a functionnal cluster A/P
-- That skillet shoud work with physical devices instead of VM series but it has not been tested.
+- Promiscuous mode MUST be enable on vNIC3 port group to have a functional cluster A/P
+- That skillet should work with physical devices instead of VM series but it has not been tested.
+
 
 ## Support Policy
 
