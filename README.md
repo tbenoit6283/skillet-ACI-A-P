@@ -14,7 +14,7 @@
 - create a Template Stack and a Template dedicated for each of your 2 VM Series all Network and Device policies configured with webpage variables.
 - create a Device Group dedicated for that specific cluster of VM series configured for a Single Pod PBR insertion.
 - move and attach your 2 VM series to these respective Template Stack and Device Group and trigger a commit to have a fully functional setup.
-
+- configure ACI plugin to connect into APIC controller in order to collect metadata to be able to create DAGs. 
  
 
 ## Variables
@@ -38,10 +38,8 @@
 - APIC_PASSWORD (Password of APIC controller)
 
 
-
-
 ## Caution  
-- That skillet will not configure ACI Fabric to redirect traffic. That step must be done in parallel.
+- That skillet will not configure ACI Fabric to redirect traffic on the single Pod. That step must be done in parallel.
 - Promiscuous mode MUST be enabled on vNIC3 port group to have a functional cluster A/P
 - That skillet should work with physical devices instead of VM series but it has not been tested.
 
