@@ -1,4 +1,4 @@
-# Automated configuration of NSX-V for Panorama
+# Automated configuration of a cluster of VM series managed by Panorama for Single Pod PBR insertion
 
 ### Pre-Requisite :
 - Panorama 8.1.X and 2 VM series 8.1.X connected to panorama but not attached to any template nor device group yet.
@@ -16,8 +16,6 @@
 - create a Device Group dedicated for that specific cluster of VM series configured for a Single Pod PBR insersion.
 - move and attach your 2 VM series to these respective Template Stack and Device Group adn trigger a commit to have a fully functionnal setup.
  
-
-Notice that 
 
 ## Variables
 - STACK_DEVICE_A (Template Stack name Device A)

@@ -1,12 +1,12 @@
-# Metadata for skillet_ACI_SinglePod_v81
+# Metadata for skillet_ACI_Single_Pod_v81
 
 # snippets is the base configuration directory for all child configurations
 # this is a complete Panorama and reference device-group and template stack configuration for ACI Single Pod
 
 # snippet folder name
-name: skillet_ACI-SinglePod
+name: skillet_ACI-Single_Pod
 # label used for menu selection
-label: v8.1 Iron-Skillet firewall clustering A/P configuration for Single ACI with Panorama templates
+label: v8.1 Iron-Skillet firewall clustering A/P configuration for Single Pod ACI with Panorama templates
 description: Iron-Skillet baseline A/P clustering configuration for ACI single Pod POCs
 # type of device configuration
 type: panorama
