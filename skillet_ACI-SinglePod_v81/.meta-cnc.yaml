@@ -77,6 +77,18 @@ variables:
     description: Local IP of your VM interface connected to the the fabric for PBR (with netmask)
     default: 10.0.0.1/24
     type_hint: text
+  - name: APIC_IP
+    description: IP address of APIC controller
+    default: 10.253.20.2
+    type_hint: ip_address
+  - name: APIC_LOGIN
+    description: Login of APIC controller
+    default: admin
+    type_hint: text
+  - name: APIC_PASSWORD
+    description: Password of APIC controller
+    default: admin
+    type_hint: text
   - name: COLORTAG
     description: Color of the TAG for rules of your Zone
     default: orange

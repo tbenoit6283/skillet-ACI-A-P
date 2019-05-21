@@ -33,6 +33,10 @@
 - TARGET_IP_PBR (Target IP of the fabric for PBR without Netmask)
 - LOCAL_IP_PBR (Local IP of your VM interface connected to the the fabric for PBR with Netmask)
 - TAGCOLOR (Color of the TAG for your Zone)
+- APIC_IP (IP address of APIC controller)
+- APIC_LOGIN (Login of APIC controller)
+- APIC_PASSWORD (Password of APIC controller)
+
 
 
 
