@@ -40,14 +40,14 @@
 
 ## Caution  
 - That skillet will not configure ACI Fabric to redirect traffic on the single Pod. That step must be done in parallel.
-- Promiscuous mode MUST be enabled on vNIC3 port group to have a functional cluster A/P
+- Promiscuous mode MUST be enabled on vNIC3 port group to have a functional cluster A/P on our VM series
 - That skillet should work with physical devices instead of VM series but it has not been tested.
 
 
 ## Support Policy
 
 Have been tested with a single instance of panorama 8.1.X but should work as well with 9.0.X release.
-Works with ACI 3.2 and higher releases.
+Works with APC 3.2 and higher releases.
 
 The code and templates in the repo are released under an as-is, best effort,
 support policy. These scripts should be seen as community supported and
