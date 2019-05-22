@@ -1,0 +1,22 @@
+<notify-group>
+        <entry name="Device-Group-ACI">
+          <device-group>
+            <member>{{ DEVICEGROUP }}</member>
+          </device-group>
+        </entry>
+</notify-group>
+    <aci-fabric>
+        <entry name="APIC-Controller">
+          <APIC-IP>{{ APIC_IP }}</APIC-IP>
+          <client-username>{{ APIC_LOGIN }}</client-username>
+          <client-password>{{ APIC_PASSWORD }}</client-password>
+          <description>APIC-Controller-for-ACI</description>
+        </entry>
+     </aci-fabric>
+      <monitoring-definition>
+        <entry name="APIC-Controller">
+          <aci-fabric>APIC-Controller</aci-fabric>
+          <description>APIC-Controller-for-ACI</description>
+          <notify-group>{{ DEVICEGROUP }}</notify-group>
+        </entry>
+      </monitoring-definition>

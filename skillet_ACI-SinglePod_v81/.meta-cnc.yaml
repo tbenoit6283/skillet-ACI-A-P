@@ -79,15 +79,15 @@ variables:
     type_hint: text
   - name: APIC_IP
     description: IP address of APIC controller
-    default: 10.253.20.2
+    default: 10.3.4.238
     type_hint: ip_address
   - name: APIC_LOGIN
     description: Login of APIC controller
-    default: admin
+    default: demo1
     type_hint: text
   - name: APIC_PASSWORD
     description: Password of APIC controller
-    default: admin
+    default: D3m0!
     type_hint: text
   - name: COLORTAG
     description: Color of the TAG for rules of your Zone
@@ -148,4 +148,7 @@ snippets:
   - name: pre_rulebase_security
     xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICEGROUP }}']/pre-rulebase
     file: pre_rulebase_security.xml
+  - name: cisco_plugin_configuration
+    xpath: /config/devices/entry[@name='localhost.localdomain']/plugins/cisco
+    file: cisco_plugin_configuration.xml
     
