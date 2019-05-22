@@ -47,7 +47,7 @@
 ## Support Policy
 
 Have been tested with a single instance of panorama 8.1.X but should work as well with 9.0.X release.
-Works with APC 3.2 and higher releases.
+Works with APIC 3.2 and higher releases.
 
 The code and templates in the repo are released under an as-is, best effort,
 support policy. These scripts should be seen as community supported and
