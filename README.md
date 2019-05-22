@@ -14,7 +14,7 @@
 - create a Template Stack and a Template dedicated for each of your 2 VM Series all Network and Device policies configured with webpage variables.
 - create a Device Group dedicated for that specific cluster of VM series configured for a Single Pod PBR insertion.
 - move and attach your 2 VM series to these respective Template Stack and Device Group and trigger a commit to have a fully functional setup.
-- configure ACI plugin to connect into APIC controller in order to collect metadata to be able to create DAGs. 
+- configure ACI plugin to connect into APIC controller in order to collect metadata to be able to create DAGs in your firewall policy.  
  
 
 ## Variables
