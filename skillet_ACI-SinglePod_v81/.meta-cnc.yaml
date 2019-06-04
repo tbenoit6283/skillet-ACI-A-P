@@ -63,7 +63,7 @@ variables:
     type_hint: ip_address
   - name: SN_DEVICE_B
     description: SN of Device B
-    default: 015351000028033
+    default: 015351000028032
     type_hint: text
   - name: ZONE
     description: Zone creation for PBR interconnection
